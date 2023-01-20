@@ -1,0 +1,33 @@
+﻿@page "/"
+
+<SfRating @bind-Value="currentValue"
+          ShowLabel=false LabelPosition="LabelPosition.Left"
+          ItemsCount="10" 
+          AllowReset=true ReadOnly=true Disabled>
+
+          <LabelTemplate>
+             <span>@context out of 10 </span>
+          </LabelTemplate>
+
+          <TooltipTemplate>
+              <span>@context star</span>
+          </TooltipTemplate>
+
+          <EmptyTemplate>
+        <img src="/images/transparent.png" />
+          </EmptyTemplate>
+
+          <FullTemplate>
+        <img src="/images/filled.png" />
+          </FullTemplate>
+
+</SfRating>
+<div>
+<label>You are rated @currentValue out of 10</label>
+</div>
+
+
+@code{
+    double currentValue = 3;
+}       
+
